@@ -1,0 +1,49 @@
+#user {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light);
+  height: clamp(100px, 100%, 800px);
+  width: clamp(250px, 85%, 650px);
+  overflow: auto;
+  margin: 0 auto;
+  padding: 20px 30px;
+  box-shadow: 0px 4px 6px 4px rgb(0 0 0 / 30%);
+}
+
+#user > h1 {
+  align-self: flex-end;
+  max-width: 300px;
+  font-size: 34px;
+  text-align: right;
+  margin-bottom: 50px;
+}
+
+#user > form > a {
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+}
+
+#user > form > div.toggle_bt {
+  width: 80%;
+  margin: 100px auto 60px;
+  align-self: center;
+  border-bottom: var(--color-grey) 3px solid;
+}
+
+#user > form > div.toggle_bt > a {
+  transform: translateY(10px);
+  background-color: var(--color-light);
+  display: block;
+  width: fit-content;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+#user > form > button {
+  display: block;
+  width: 200px;
+  margin: auto auto 50px;
+  font-weight: bold;
+}

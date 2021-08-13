@@ -1,0 +1,153 @@
+#bill_empty {
+  max-width: 290px;
+}
+
+#bill_empty > h2 {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 100px;
+}
+
+#bill_empty > a > button {
+  width: 95%;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+}
+
+#bill_empty > a:first-of-type > button {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-less-light);
+  color: var(--color-grey);
+}
+
+#bill_empty > a:nth-of-type(2) > button {
+  margin: 10px 0;
+  background-color: var(--close-color);
+}
+
+#bill_itens {
+  width: 100vw;
+  padding: 0.625em;
+  overflow: auto;
+  height: calc(100vh - 100px);
+  transform: rotateX(180deg);
+}
+
+#bill_itens > div {
+  transform: rotateX(180deg);
+}
+
+#bill_itens > div > li {
+  position: relative;
+  display: block;
+  list-style: none;
+  width: 80%;
+  padding: 0.625em 1.25em;
+}
+
+#bill_itens > div > li > span:first-of-type {
+  background-color: var(--color-light);
+  padding: 0.4em;
+  margin-right: 0.3em;
+}
+
+#bill_itens > div > li > span:nth-of-type(2) {
+  position: absolute;
+  right: 10px;
+  top: 0.4em;
+  display: inline-block;
+  width: fit-content;
+  font-weight: bold;
+  padding: 0.4em;
+}
+
+.my_itens {
+  margin: 0.625em 0 0.625em auto;
+  background-color: var(--color-less-light);
+}
+
+.others_itens {
+  margin: 0.625em auto 0.625em 0;
+  background-color: var(--terceary-color);
+}
+
+#bill_itens > div > li > div {
+  width: 100%;
+}
+
+#bill_itens > div > li > div > span:first-of-type {
+  font-size: 0.9em;
+  margin-left: 2em;
+}
+
+#bill_itens > div > li > div > span:nth-of-type(2) {
+  display: block;
+  width: fit-content;
+  margin: 0 0 0 auto;
+}
+
+#bts_total {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  padding: 1.25em;
+  bottom: 0;
+  background-color: var(--color-light);
+  box-shadow: 0px -4px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+#bts_total > button {
+  width: calc(50% - 0.6em);
+  font-size: 0.8em;
+  margin: 0.3em;
+  height: 4em;
+}
+
+#total_Window > div {
+  position: relative;
+  background-color: var(--color-light);
+  padding: 3em;
+  border-radius: 5px;
+}
+
+#total_Window > div > span {
+  display: block;
+  margin: 1em 0;
+}
+
+#total_Window > div > span .preco {
+  position: absolute;
+  right: 3em;
+  display: inline-block;
+  font-weight: bold;
+}
+
+#total_Window > div > button {
+  font-weight: bold;
+  margin: 6em auto -1em;
+}
+
+#total_Window > div > button:hover {
+  background-color: var(--other-color);
+  color: var(--color-dark);
+}
+
+.notification {
+  width: fit-content;
+  background-color: var(--color-less-light);
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin: 0.3em auto;
+}
+
+.close_bill {
+  background-color: var(--other-color);
+  color: var(--color-dark);
+  cursor: default;
+}
+
+.close_bill:hover {
+  background-color: var(--other-color);
+}

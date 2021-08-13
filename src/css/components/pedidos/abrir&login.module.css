@@ -1,0 +1,29 @@
+#bill_access {
+  position: relative;
+  padding: 20px;
+  height: 544px;
+  width: 343px;
+  background: var(--color-light);
+  border: 1px solid var(--color-less-light);
+  box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+#bill_access > h1 {
+  text-align: right;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 70px;
+}
+
+#bill_access > button {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 20px;
+  display: block;
+  margin: 0 auto;
+  width: 228px;
+  height: 43px;
+  border-radius: 5px;
+}
