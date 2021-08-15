@@ -1,2 +1,2 @@
 export const AppName = "emenu";
-export const API = "http://127.0.0.1/ecardapio";
+export const API = "http://e-cardapio.000webhostapp.com";
