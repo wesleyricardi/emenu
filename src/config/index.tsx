@@ -1,2 +1,2 @@
-export const AppName = "cardapio3";
-export const API = "http://192.168.0.101/ecardapio";
+export const AppName = "emenu";
+export const API = "http://127.0.0.1/ecardapio";
