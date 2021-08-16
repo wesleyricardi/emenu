@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { API } from "../../config";
+import { API } from "../../config/index.json";
 import { useAuthentication } from "../../context/AuthContext";
 
 import styles from "../../css/components/user/index.module.css";
@@ -17,7 +17,7 @@ export default function Register({
 
   const handleRegister = async ({ nome, email, cpf, senha, repitasenha }) => {
     if (repitasenha === senha) {
-      const req = await fetch(`${API}/api/register`, {
+      const req = await fetch(`${API}/register`, {
         method: "POST",
         mode: "cors",
         headers: {

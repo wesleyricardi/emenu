@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { API } from "../../config";
+import { API } from "../../config/index.json";
 import Loading from "../_extra/loading";
 import { useItemInCart } from "../../context/CartContext";
 import { useAuthentication } from "../../context/AuthContext";
@@ -38,7 +38,7 @@ export default function Finish() {
       user: number,
       itens: itens
     ): Promise<void> {
-      const req = await fetch(`${API}/api/sendtobill`, {
+      const req = await fetch(`${API}/sendtobill`, {
         method: "POST",
         mode: "cors",
         headers: {

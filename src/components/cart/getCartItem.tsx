@@ -1,4 +1,4 @@
-import { API, AppName } from "../../config";
+import { AppName, API } from "../../config/index.json";
 
 interface Item {
   id: number;
@@ -14,7 +14,7 @@ interface Item {
 
 export default async function getItems() {
   if (document.cookie) {
-    const req = await fetch(`${API}/api/all-items`);
+    const req = await fetch(`${API}/all-items`);
     const items: [Item] = await req.json();
 
     const Cookies: string[] = document.cookie.split(";");

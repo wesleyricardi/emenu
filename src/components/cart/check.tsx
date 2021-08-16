@@ -7,7 +7,7 @@ import ComponentLogin from "../user/login";
 import ComponentRegister from "../user/cadastro";
 import ComponentLoginTable from "../pedidos/login";
 import ComponentOpenTable from "../pedidos/abrir";
-import { API } from "../../config";
+import { API } from "../../config/index.json";
 
 import styles from "../../css/components/cart/check.module.css";
 import Price from "../_extra/price";
@@ -58,7 +58,7 @@ export default function List({
 
     async function getBillID() {
       try {
-        const req = await fetch(`${API}/api/verificarmesa/${id_mesa}`);
+        const req = await fetch(`${API}/verificarmesa/${id_mesa}`);
 
         const { code, id: bill } = await req.json();
         if (code === 200) setBillOpen(true);

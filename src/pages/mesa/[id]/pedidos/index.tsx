@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { API } from "../../../../config";
+import { API } from "../../../../config/index.json";
 import AbrirMesa from "../../../../components/pedidos/abrir";
 import BillItems from "../../../../components/pedidos/items";
 import Cart from "../../../../components/cart";
@@ -30,7 +30,7 @@ function Pedidos() {
   useEffect(() => {
     async function getBillID() {
       try {
-        const req = await fetch(`${API}/api/verificarmesa/${id_mesa}`);
+        const req = await fetch(`${API}/verificarmesa/${id_mesa}`);
         const { code, id: bill } = await req.json();
         if (code && (code === 200 || code === 203)) {
           setBillOpen(true);

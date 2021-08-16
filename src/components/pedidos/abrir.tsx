@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { API } from "../../config";
+import { API } from "../../config/index.json";
 import { useBillAuthentication } from "../../context/BillContext";
 
 import styles from "../../css/components/pedidos/abrir&login.module.css";
@@ -16,7 +16,7 @@ export default function abrirmesa({
 
   const handleRegister = async ({ senha, repitasenha }) => {
     if (repitasenha === senha) {
-      const req = await fetch(`${API}/api/abrirmesa`, {
+      const req = await fetch(`${API}/abrirmesa`, {
         method: "POST",
         mode: "cors",
         headers: {

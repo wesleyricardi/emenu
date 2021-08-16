@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { API } from "../../config";
+import { API } from "../../config/index.json";
 import Price from "../_extra/price";
 
 export default function Detalhes({
@@ -13,7 +13,7 @@ export default function Detalhes({
 
   useEffect(() => {
     async function getServiceTax() {
-      const req = await fetch(`${API}/api/taxa_de_servico`);
+      const req = await fetch(`${API}/taxa_de_servico`);
       const { service_tax } = await req.json();
       setServiceTax(service_tax);
     }
@@ -21,7 +21,7 @@ export default function Detalhes({
   }, []);
 
   async function requestClosingBill() {
-    const req = await fetch(`${API}/api/solicitarfechamento`, {
+    const req = await fetch(`${API}/solicitarfechamento`, {
       method: "PUT",
       mode: "cors",
       headers: {

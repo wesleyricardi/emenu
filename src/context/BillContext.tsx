@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { setCookie, parseCookies, destroyCookie } from "nookies";
-import { API } from "../config";
+import { API } from "../config/index.json";
 
 type AuthType = {
   isAuthenticated?: boolean;
@@ -32,7 +32,7 @@ export default function BillProvider({ children }) {
     async function recover() {
       if (token) {
         try {
-          const req = await fetch(`${API}/api/mesa/authlogin`, {
+          const req = await fetch(`${API}/mesa/authlogin`, {
             method: "POST",
             mode: "cors",
             headers: {
@@ -45,7 +45,7 @@ export default function BillProvider({ children }) {
 
           const { id, mesa } = await req.json();
 
-          const verf = await fetch(`${API}/api/verificarmesa/${mesa}`);
+          const verf = await fetch(`${API}/verificarmesa/${mesa}`);
           const { code } = await verf.json();
           console.log(mesa);
           if (code && (code === 200 || code === 203)) setBill({ id, mesa });
@@ -64,7 +64,7 @@ export default function BillProvider({ children }) {
 
   async function loginBill({ bill_id, senha }: LoginData) {
     try {
-      const req = await fetch(`${API}/api/mesa/login`, {
+      const req = await fetch(`${API}/mesa/login`, {
         method: "POST",
         mode: "cors",
         headers: {

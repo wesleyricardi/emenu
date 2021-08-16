@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AppName } from "../../config";
+import { AppName } from "../../config/index.json";
 import { useItemInCart, useSendItemtoCart } from "../../context/CartContext";
 import getCart from "./getCartItem";
 

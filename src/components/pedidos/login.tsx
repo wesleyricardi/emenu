@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { API } from "../../config";
+import { API } from "../../config/index.json";
 import { useBillAuthentication } from "../../context/BillContext";
 
 import styles from "../../css/components/pedidos/abrir&login.module.css";
@@ -24,7 +24,7 @@ export default function LoginMesa({
   useEffect(() => {
     async function getBillID() {
       try {
-        const req = await fetch(`${API}/api/verificarmesa/${table}`);
+        const req = await fetch(`${API}/verificarmesa/${table}`);
 
         const { code, id: bill } = await req.json();
         if (code && (code === 200 || code === 203)) {

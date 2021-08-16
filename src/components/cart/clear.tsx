@@ -1,4 +1,4 @@
-import { AppName } from "../../config";
+import { AppName } from "../../config/index.json";
 import getItems from "./getCartItem";
 
 export default async function clearCart() {

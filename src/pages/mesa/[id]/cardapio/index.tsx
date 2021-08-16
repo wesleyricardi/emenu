@@ -7,7 +7,7 @@ import Footer from "../../../../components/footer";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Loading from "../../../../components/_extra/loading";
-import { API } from "../../../../config";
+import { API } from "../../../../config/index.json";
 
 interface Categories {
   id: number;
@@ -52,8 +52,8 @@ function Home() {
 
   useEffect(() => {
     const getList = async () => {
-      const req = await fetch(`${API}/api/all-items`);
-      const req2 = await fetch(`${API}/api/categories`);
+      const req = await fetch(`${API}/all-items`);
+      const req2 = await fetch(`${API}/categories`);
 
       const items = await req.json();
       setItems(items);

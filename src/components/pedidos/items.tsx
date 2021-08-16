@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { API } from "../../config";
+import { API } from "../../config/index.json";
 import Loading from "../_extra/loading";
 
 import styles from "../../css/components/pedidos/itens.module.css";
@@ -49,7 +49,7 @@ export default function billItems({
   useEffect(() => {
     let mounted = true;
     async function getBill() {
-      const req = await fetch(`${API}/api/getbill/${bill}`);
+      const req = await fetch(`${API}/getbill/${bill}`);
       const { code, result }: response = await req.json();
       if (mounted)
         if (code && code === 200) {

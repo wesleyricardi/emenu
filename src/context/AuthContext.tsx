@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
 import { setCookie, parseCookies } from "nookies";
-import { API } from "../config";
+import { API } from "../config/index.json";
 
 type AuthType = {
   isAuthenticated?: boolean;
@@ -28,7 +28,7 @@ export default function AuthProvider({ children }) {
     async function recover() {
       if (token) {
         try {
-          const req = await fetch(`${API}/api/authlogin`, {
+          const req = await fetch(`${API}/authlogin`, {
             method: "POST",
             mode: "cors",
             headers: {
@@ -52,7 +52,7 @@ export default function AuthProvider({ children }) {
 
   async function login({ email, senha }: LoginData, redirect = false) {
     try {
-      const req = await fetch(`${API}/api/login`, {
+      const req = await fetch(`${API}/login`, {
         method: "POST",
         mode: "cors",
         headers: {
