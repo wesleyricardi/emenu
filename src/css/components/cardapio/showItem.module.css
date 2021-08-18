@@ -1,0 +1,34 @@
+li.showItem {
+  cursor: pointer;
+  display: flex;
+  list-style: none;
+  padding: 10px 20px;
+  margin: 5px 0;
+}
+li.showItem > div {
+  position: relative;
+  width: -webkit-fill-available;
+}
+
+li.showItem > div > span {
+  font-weight: bold;
+  color: var(--contrast-color);
+}
+
+li.showItem > div > span:nth-child(2) {
+  position: absolute;
+  right: 15px;
+}
+
+li.showItem > div > div {
+  padding-right: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+li.showItem > img {
+  margin-left: auto;
+  width: 75px;
+}

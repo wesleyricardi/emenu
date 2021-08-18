@@ -11,37 +11,3 @@
   padding: 10px 0 10px 10px;
   border: var(--color-less-light) thin solid;
 }
-#cardapio > section > ul > li {
-  cursor: pointer;
-  display: flex;
-  list-style: none;
-  padding: 10px 20px;
-  margin: 5px 0;
-}
-#cardapio > section > ul > li > div {
-  position: relative;
-  width: -webkit-fill-available;
-}
-
-#cardapio > section > ul > li > div > span {
-  font-weight: bold;
-  color: var(--contrast-color);
-}
-
-#cardapio > section > ul > li > div > span:nth-child(2) {
-  position: absolute;
-  right: 15px;
-}
-
-#cardapio > section > ul > li > div > div {
-  padding-right: 15px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-#cardapio > section > ul > li > img {
-  margin-left: auto;
-  width: 75px;
-}

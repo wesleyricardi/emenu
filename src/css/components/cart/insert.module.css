@@ -6,6 +6,7 @@
   overflow-x: hidden;
   height: calc(100% - 115px);
   margin: 0 -1.25em;
+  z-index: 100;
 }
 
 #insert > img {

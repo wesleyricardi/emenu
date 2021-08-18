@@ -1,6 +1,5 @@
-import { useSendItemtoCart } from "../../context/CartContext";
 import styles from "../../css/components/cardapio/index.module.css";
-import Price from "../_extra/price";
+import ShowItem from "./showItem";
 
 type Props = {
   items: [Itens];
@@ -23,25 +22,6 @@ interface Itens {
 }
 
 export default function Cardapio({ items, categories }: Props) {
-  const { setsendtoCart } = useSendItemtoCart();
-
-  const sendItemToCart = (event: React.MouseEvent<HTMLElement>) => {
-    const target = event.target as Element;
-
-    let id_item = target.id.substring(5);
-    if (!id_item)
-      id_item = (target.parentNode.parentNode as Element).id.substring(5);
-    if (!id_item) id_item = (target.parentNode as Element).id.substring(5);
-
-    items.filter((item) => {
-      if (item.id == id_item) {
-        setsendtoCart(item);
-        history.pushState(null, null, `cardapio/item/${item.id}`);
-        return;
-      }
-    });
-  };
-
   async function SlideDown(event: React.MouseEvent<HTMLElement>) {
     const target = event.target as Element;
 
@@ -64,26 +44,13 @@ export default function Cardapio({ items, categories }: Props) {
   return (
     <main id={styles.cardapio}>
       {categories.map((category, key) => (
-        <section key={key}>
+        <section id={`category_${category.id}`} key={key}>
           <h3 onClick={SlideDown}>{category.nome}</h3>
           <ul>
             {items.map(
               (item, k) =>
                 item.categoria === category.id && (
-                  <li onClick={sendItemToCart} id={"item_" + item.id} key={k}>
-                    <div>
-                      <span>{item.nome}</span>
-                      <span>
-                        <Price>{item.preco}</Price>
-                      </span>
-                      <div>{item.descricao}</div>
-                    </div>
-                    <img
-                      height="50px"
-                      src={"/fotos/" + item.foto}
-                      alt="imagem"
-                    />
-                  </li>
+                  <ShowItem item={item} key={k} />
                 )
             )}
           </ul>

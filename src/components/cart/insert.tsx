@@ -104,6 +104,7 @@ const Cart = ({ setStep, item }: props) => {
             onChange={writeObservation}
             value={Observation}
             name="observacao"
+            autoComplete="off"
           />
         </div>
       </div>

@@ -1,0 +1,118 @@
+.menu_top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--color-light);
+  z-index: 99;
+  box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+}
+.menu_top > div:first-of-type {
+  position: relative;
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  width: clamp(100px, 100%, 800px);
+  transition: 300ms ease-in-out;
+  text-align: right;
+}
+
+.menu_top > div:first-of-type > span:first-of-type {
+  position: absolute;
+  left: 1em;
+  display: inline-block;
+  width: max-content;
+  text-align: left;
+}
+
+.menu_top > div:first-of-type > span:first-of-type > h3 {
+  display: inline-block;
+}
+
+.menu_top > div:first-of-type > label > img {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: -2em;
+  vertical-align: bottom;
+}
+
+.menu_top > div:first-of-type > input {
+  transition: 300ms ease-in-out;
+  padding-left: 2.5em;
+  width: 2.5em;
+}
+
+.menu_top > div:first-of-type > input:focus,
+.menu_top > div:first-of-type > input:not(:placeholder-shown) {
+  width: 10em;
+}
+
+.menu_top > div:first-of-type > ul {
+  max-height: 0px;
+  position: fixed;
+  top: 2.54em;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 2.54em);
+  width: clamp(100px, 100%, 800px);
+  margin: 0 auto;
+  padding-top: 3em;
+  background-color: var(--color-light);
+  transition: 300ms ease-in-out;
+  z-index: 100;
+  text-align: left;
+  overflow: auto;
+}
+
+.menu_top > div:first-of-type > input:not(:placeholder-shown) ~ ul {
+  max-height: 100vh;
+}
+
+.menu_top > div:first-of-type > ul > li {
+  max-width: 750px;
+  margin: 0 auto;
+  border-top: var(--color-less-light) 2px solid;
+}
+
+.menu_top > div:first-of-type > span:last-of-type > img {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 1.5em;
+  vertical-align: bottom;
+}
+
+.menu_top > div:nth-of-type(2) {
+  overflow-x: auto;
+}
+
+.menu_top > div:nth-of-type(2) > ul {
+  position: relative;
+  display: flex;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.menu_top > div > ul > li {
+  padding: 1em 1.5em;
+  list-style: none;
+  transition: 300ms ease-in-out;
+}
+
+.menu_top > div > ul > li.watching {
+  background-color: var(--color-less-light);
+  border-bottom: var(--main-color) 2px solid;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+#cardapio {
+  margin-top: 4em;
+}
+
+#cardapio > section {
+  height: 500px;
+  border: var(--color-dark) 2px solid;
+}
