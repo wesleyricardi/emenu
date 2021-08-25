@@ -1,8 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default () => {
-    return (
-        <footer id='footer'>Esse é o rodapé</footer>
-    )
-}
-
+  return <footer id="footer">App desenvolvido por Wesley Ricardi</footer>;
+};
