@@ -1,5 +1,5 @@
 {
   "AppName": "emenu",
-  "API": "http://192.168.0.101/ecardapio/api",
+  "API": "https://wesleyricardi.com/emenu/api",
   "RestaurantName": "Restaurante Maria Xica"
 }
