@@ -33,11 +33,16 @@ export default function Menu({ items, categories }: Props) {
       window.addEventListener("scroll", async () => {
         categories.find((category, key) => {
           const html = document.querySelector("html");
-          const nav = document.getElementById("menu-top");
+          const nav_top = document.getElementById("nav_top");
+          const menu_top = document.getElementById("menu-top");
           const section = document.getElementById(`category_${category.id}`);
           const li = document.getElementById(`menu_category_${category.id}`);
           const search_container = document.getElementById("search-container");
           setsearchResult(null);
+
+          if (html.scrollTop < 100) nav_top.style.opacity = "0";
+          else nav_top.style.opacity = "1";
+
           if (
             html.scrollTop < scrollPos &&
             search_container.style.maxHeight !== "100px"
@@ -62,8 +67,8 @@ export default function Menu({ items, categories }: Props) {
           ) {
             if (li.className !== style.watching) li.className = style.watching;
 
-            if (nav.scrollLeft !== li.offsetLeft)
-              nav.scroll({ left: li.offsetLeft, behavior: "smooth" });
+            if (menu_top.scrollLeft !== li.offsetLeft)
+              menu_top.scroll({ left: li.offsetLeft, behavior: "smooth" });
 
             return;
           } else {
@@ -98,8 +103,8 @@ export default function Menu({ items, categories }: Props) {
   }
 
   return (
-    <nav className={style.menu_top}>
-      <div id="search-container" style={{ maxHeight: "100px", opacity: "1" }}>
+    <nav id="nav_top" style={{ opacity: "0" }} className={style.menu_top}>
+      <div id="search-container" style={{ maxHeight: "50px", opacity: "1" }}>
         <span>
           <h3>{RestaurantName}</h3>
         </span>
