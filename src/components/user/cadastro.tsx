@@ -15,7 +15,7 @@ export default function Register({
   const { register, handleSubmit } = useForm();
   const { login } = useAuthentication();
 
-  const handleRegister = async ({ nome, email, cpf, senha, repitasenha }) => {
+  const handleRegister = async ({ nome, email, senha, repitasenha }) => {
     if (repitasenha === senha) {
       const req = await fetch(`${API}/register`, {
         method: "POST",
@@ -24,7 +24,7 @@ export default function Register({
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({ nome, email, cpf, senha }),
+        body: JSON.stringify({ nome, email, senha }),
       });
       const { code } = await req.json();
       if (code === 201) {
@@ -85,17 +85,6 @@ export default function Register({
             placeholder=" "
           />
           <label htmlFor="input_email">E-mail</label>
-        </div>
-        <div>
-          <input
-            {...register("cpf")}
-            required
-            type="text"
-            name="cpf"
-            id="input_cpf"
-            placeholder=" "
-          />
-          <label htmlFor="input_cpf">CPF</label>
         </div>
         <div>
           <input
